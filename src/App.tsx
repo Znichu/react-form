@@ -56,14 +56,18 @@ function App() {
                                    name={"ipAddress"}
                                    value={formFields.ipAddress}
                                    type={"text"}
-                                   onChange={createChangeHandler("ipAddress")}/>
+                                   onChange={createChangeHandler("ipAddress")}
+                                   required={true}
+                            />
                         </div>
                         <div>
                             <Input placeholder={"Subnet Mask:"}
                                    name={"subnetMask"}
                                    value={formFields.subnetMask}
                                    type={"text"}
-                                   onChange={createChangeHandler("subnetMask")}/>
+                                   onChange={createChangeHandler("subnetMask")}
+                                   required={true}
+                            />
                         </div>
                         <div>
                             <Input placeholder={"Default Gateway:"}
@@ -92,7 +96,9 @@ function App() {
                                    name={"referredDNSServer"}
                                    value={formFields.preferredDNSServer}
                                    type={"text"}
-                                   onChange={createChangeHandler("preferredDNSServer")}/>
+                                   onChange={createChangeHandler("preferredDNSServer")}
+                                   required={true}
+                            />
 
                         </div>
                         <div>
