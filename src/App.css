@@ -6,15 +6,28 @@
   width: 100%;
 }
 
-form {
-  width: 80%;
-  margin: 0 auto;
-}
 
 .form-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+
+.field-container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 0 auto;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 10px 0
+}
+
+.radio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 15px 0;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }

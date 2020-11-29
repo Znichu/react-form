@@ -8,10 +8,23 @@ type PropsType = {
     type: string
     checked?: boolean
     required?: boolean
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    disabled?: boolean
+    onChange: (e: React.ChangeEvent<HTMLInputElement> & React.ChangeEvent<HTMLSelectElement>) => void
+    handleBlur?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Input: React.FC<PropsType> = ({placeholder, name, error, value, type, checked, required, onChange}) => {
+export const Input: React.FC<PropsType> = ({
+                                               placeholder,
+                                               name,
+                                               error,
+                                               value,
+                                               type,
+                                               checked,
+                                               required,
+                                               disabled,
+                                               onChange,
+                                               handleBlur
+                                           }) => {
     return (
         <label>
             <span className="span">{placeholder}</span>
@@ -22,6 +35,8 @@ export const Input: React.FC<PropsType> = ({placeholder, name, error, value, typ
                 checked={checked}
                 onChange={onChange}
                 required={required}
+                disabled={disabled}
+                onBlur={handleBlur}
             />
             {!!error && <span className="errorText">{error}</span>}
         </label>

@@ -1,17 +1,18 @@
 import React from "react";
 
 type PropsType = {
-    options: string[]
     placeholder: string
     value: string
-    onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
+    onChange: (e: React.ChangeEvent<HTMLInputElement> & React.ChangeEvent<HTMLSelectElement>) => void
 }
 
-export const Select :React.FC<PropsType> = ({options, placeholder, value, onChange}) => {
+const options = ["wifi1", "wifi2", "wifi3"];
+
+export const Select :React.FC<PropsType> = ({placeholder, value, onChange}) => {
     return (
         <label>
             {placeholder}
-            <select value={value} onChange={onChange}>
+            <select name={"wirelessNetworkName"} value={value} onChange={onChange}>
                 {options.map(option => <option value={option}>{option}</option>)}
             </select>
         </label>
