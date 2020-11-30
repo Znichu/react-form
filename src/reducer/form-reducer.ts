@@ -64,10 +64,10 @@ export const formReducer = (state = initialState, action: any): InitialStateType
                 }
             }
         case SET_ERRORS:
-            debugger
             return {
                 ...state,
-                errors: {...state.errors, action.payload
+                errors: {...state.errors,
+                    ...action.payload
                 }
             }
         case RESET_FORM_FIELDS:

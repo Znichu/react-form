@@ -12,8 +12,9 @@ export const Select :React.FC<PropsType> = ({placeholder, value, onChange}) => {
     return (
         <label>
             {placeholder}
-            <select name={"wirelessNetworkName"} value={value} onChange={onChange}>
-                {options.map(option => <option value={option}>{option}</option>)}
+            <select name={"wirelessNetworkName"} defaultValue={""} onChange={onChange}>
+                <option value="" disabled>Please select</option>
+                {options.map((option, index) => <option key={index} value={option}>{option}</option>)}
             </select>
         </label>
     )

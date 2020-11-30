@@ -9,6 +9,10 @@ export type EthernetSettingsFields = {
 }
 
 export type WirelessSettingsFields = {
+    enableWifi: boolean
+    wirelessNetworkName: string
+    wirelessSecurity: boolean
+    securityKey: string
     wirelessIpAddressRadio: number
     ipAddress: string
     subnetMask: string
